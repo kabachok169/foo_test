@@ -9,9 +9,7 @@ matrix:
           packages:
             - g++-5
             - cmake
-          sources: &sources
-            - llvm-toolchain-precise
-            - ubuntu-toolchain-r-test
+          
       
 script:
   - mkdir build && cd build
