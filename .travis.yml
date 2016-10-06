@@ -17,3 +17,4 @@ matrix:
 script:
   - mkdir build && cd build
   - cmake .. && make
+  - ./tests -s -r compact
