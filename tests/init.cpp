@@ -1,5 +1,5 @@
 #include "../include/foo.h"
-#include <catch.hpp>
+#include "catch.hpp"
 
 SCENARIO("foo: test", "[testing]") {
 	int a = 5;
