@@ -1,7 +1,7 @@
 language: generic
 matrix:
   include:
-    - os: windows
+    - os: linux
       sudo: required
       env: COMPILER_NAME=gcc CXX=g++-5 CC=gcc-5
       addons:
@@ -9,10 +9,11 @@ matrix:
           packages:
             - g++-5
             - cmake
+          sources: &sources
+            - llvm-toolchain-precise
+            - ubuntu-toolchain-r-test
           
       
 script:
   - mkdir build && cd build
   - cmake .. && make
-  - cd ..
-  - ./tests -s -r compact
