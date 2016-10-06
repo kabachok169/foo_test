@@ -7,4 +7,4 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR} /tests/)
 
 add_library(Test STATIC ${CMAKE_CURRENT_SOURCE_DIR}/source/foo.cpp tests/main.cpp)
 
-add_executable(tests ${TESTS_SOURCE} tests/foo.cpp tests/main.cpp)
+add_executable(tests ${TESTS_SOURCE} tests/init.cpp tests/main.cpp)
