@@ -1,4 +1,4 @@
-#include "foo.h"
+#include "../include/foo.h"
 #include <catch.hpp>
 
 SCENARIO("foo: test", "[testing]") {
