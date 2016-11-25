@@ -1,10 +1,18 @@
-cmake_minimum_required(VERSION 2.8.7)
+cmake_minimum_required(VERSION 2.6) 
 project(foo)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+include_directories(include)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} /tests/)
+set(SOURCE_EXE examples/main_f.cpp)
 
-add_library(Test STATIC ${CMAKE_CURRENT_SOURCE_DIR}/source/foo.cpp tests/main.cpp)
+set(SOURCE_LIB sources/foo.cpp)
 
-add_executable(tests ${TESTS_SOURCE} tests/init.cpp tests/main.cpp)
+set(SOURCE_TEST test/init.cpp)
+
+add_library(lib STATIC ${SOURCE_LIB})
+
+add_executable(main ${SOURCE_EXE})
+
+add_executable(test ${SOURCE_TEST})
+
+target_link_libraries(main lib)
