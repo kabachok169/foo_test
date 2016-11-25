@@ -19,5 +19,5 @@ before_build:
     - call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" %VCVARS_PLATFORM%
 
 build_script:
-    - cd tests_catch/
+    - cd tests
     - cmake -G "NMake Makefiles" && nmake
